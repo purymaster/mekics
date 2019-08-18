@@ -1,0 +1,451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=1300" />
+<title>MEK-ICS 리뉴얼 가이드페이지</title>
+<link type="text/css" rel="stylesheet" href="../css/reset.css" />
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/mainUI.css" />
+<script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="../js/mainUI.js"></script>
+<script type="text/javascript" src="../js/jquery.bxslider.js"></script>
+<script type="text/javascript">
+	//<![CDATA[
+
+	$(function(){
+		
+		///////////////
+		//컨텐츠 제어//
+		///////////////
+		
+		mainLayout();
+		
+		function mainLayout(){
+			var w_width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+			if(w_width <= 1920){
+				$(".main_slide").css('width','100%');
+				if(w_width < 1120){
+					$("#content.main").css({"width":"1120px","left":"0","margin-left":"0"});
+					$("#content.main .con_wrap").css('width','1120px');
+					$(".main_slide img").css('width','1120px');
+				} else {
+					$("#content.main").css({"width":"1920px","left":"-960px","margin-left":"50%"});
+					$("#content.main .con_wrap").css('width','1920px');
+					$(".main_slide img").css('width','100%');
+				};
+			} else {
+				$(".main_slide").css('width','1920px');
+			};
+		};
+	
+		$(window).resize(function(){
+			mainLayout();
+
+		});
+
+		/////////////////
+		//홍보센터 제어//
+		/////////////////
+		var con03_tab = $("#content.main .main_con03 dl dt a");
+		var con03_text = $("#content.main .main_con03 dl dd");
+		
+		con03_text.hide(); //내용 초기화
+		$("#content.main .main_con03 dl dt:first-child").next("dd").show(); //내용 default는 전시회
+		$("#content.main .main_con03 dl dt:first-child a").addClass("on"); //탭메뉴 초기화(default는 전시회)
+
+		con03_tab.click(function(){
+			$("#content.main .main_con03 dl dt a").removeClass("on");
+			$(this).addClass("on");
+			con03_text.hide();
+			$(this).parent("dt").next("dd").show();
+		});
+		
+		con03_tab.focusin(function(){ //Safari 5.1.7 대응, bind나 on으로 묶지 않고 click과 focusin을 나눠쓸 것
+			$("#content.main .main_con03 dl dt a").removeClass("on");
+			$(this).addClass("on");
+			con03_text.hide();
+			$(this).parent("dt").next("dd").show();
+		});
+		
+		//////////////
+		//BX슬라이더//
+		//////////////
+		$(".slide").bxSlider({
+			auto: true,
+			mode: 'fade'
+		});
+	});
+	
+	//]]>
+</script>
+</head>
+
+<body>
+
+<div class="ie7"><!-- 하위 브라우저 접속시 화면 -->
+	<img src="../img/img/img_logo.gif" width="103" height="46" alt="MEK-ICS" />
+	<p>
+    	본 사이트는 인터넷 익스플로러8 버전 이상의 최신 브라우저에 최적화되어있습니다.<br />
+    	더 나은 브라우징을 위해, 최신 브라우저로 업데이트해주시길 바랍니다.
+    </p>
+    <a href="http://windows.microsoft.com/ko-kr/interne t-explorer/download-ie/">인터넷 익스플로러 업데이트</a>
+</div>
+
+<div class="skip"><!-- 스킵 네비게이션 -->
+	<a href="#content">본문 바로가기</a>
+</div>
+
+<div class="header_wrap">
+	<div class="header">
+    	<h1>
+        	<a href="#"><img src="../img/img/img_logo.png" width="99" height="46" alt="MEK-ICS" /></a>
+        </h1>
+        <ul class="gnb">
+        	<li>
+            	<a href="#">회사소개</a>
+                <ul class="menu_1st">
+                	<li><a href="#">회사소개</a></li>
+                    <li><a href="#">비전 및 사업영역</a></li>
+                    <li><a href="#">오시는 길</a></li>
+                    <li><a href="#">관계회사</a></li>
+                </ul>
+			</li>
+            <li>
+            	<a href="#">사업영역</a>
+                <ul class="menu_2nd">
+                    <li><a href="#">병원-중환자 영역 사업</a></li>
+					<li><a href="#">홈렌탈 사업</a></li>
+                    <li><a href="#">홈헬스케어 사업</a></li>
+                </ul>
+            </li>
+            <li>
+            	<a href="#">IR</a>
+                <ul class="menu_3rd">
+                	<li><a href="#">재무정보</a></li>
+                    <li><a href="#">감사보고서</a></li>
+                    <li><a href="#">IR 자료</a></li>
+                </ul>
+			</li>
+            <li>
+            	<a href="#">홍보센터</a>
+                <ul class="menu_4th">
+                	<li><a href="#">전시회</a></li>
+                    <li><a href="#">학회</a></li>
+                    <li><a href="#">Press release</a></li>
+                </ul>
+            </li>
+            <li>
+            	<a href="#">인재영입</a>
+                <ul class="menu_5th">
+                    <li><a href="#">인재상</a></li>
+                    <li><a href="#">회사생활</a></li>
+                    <li><a href="#">채용절차</a></li>
+                    <li><a href="#">채용공고</a></li>
+                </ul>
+            </li>
+            <li>
+            	<a href="#">고객센터</a>
+                <ul class="menu_6th">
+                    <li><a href="#">서비스 정보</a></li>
+                    <li><a href="#">서비스 요청</a></li>
+                    <li><a href="#">견적 문의</a></li>
+                    <li><a href="#">자주하는 질문</a></li>
+                    <li><a href="#">다운로드 센터</a></li>
+                </ul>
+            </li>
+        </ul>
+       
+        <div class="top_menu">
+        	<a class="lang menu" href="#none">KOREAN</a>
+            <ul>
+            	<li><a href="#">ENGLISH</a></li>
+                <li><a href="#">CHINESE</a></li>
+            </ul>
+            <a class="map" href="#none">사이트맵</a>
+            
+            <div class="sitemap">
+            	<div>
+                    <ul>
+                        <li>
+                            <span>회사소개</span>
+                            <ul>
+                                <li><a href="#">회사소개</a></li>
+                                <li><a href="#">비전 및 사업영역</a></li>
+                                <li><a href="#">오시는 길</a></li>
+                                <li>
+                                    <span>관계회사</span>
+                                    <ul>
+                                        <li><a href="#">맥헬스케어</a></li>
+                                        <li><a href="#">연대세종의료기기</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>사업영역</span>
+                            <ul>
+                                <li>
+                                    <span>병원-중환자 영역 사업</span>
+                                    <ul>
+                                        <li><a href="#">사업소개</a></li>
+                                        <li>
+                                            <span class="sub">제품소개</span>
+                                            <ul>
+                                                <li>
+                                                    <span>인공호흡기</span>
+                                                    <ul>
+                                                        <li><a href="#">MV2000</a></li>
+                                                        <li><a href="#">MTV1000</a></li>
+                                                        <li><a href="#">MC200</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <span>호흡치료기</span>
+                                                    <ul>
+                                                        <li><a href="#">HFT500</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <span>환자감시장치</span>
+                                                    <ul>
+                                                        <li><a href="#">MCP1300</a></li>
+                                                        <li><a href="#">MP1000NT PLUS</a></li>
+                                                        <li><a href="#">MP800</a></li>
+                                                        <li><a href="#">MP800C</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <span>산소포화도측정기</span>
+                                                    <ul>
+                                                        <li><a href="#">MP570T</a></li>
+                                                        <li><a href="#">MP110P</a></li>
+                                                        <li><a href="#">MP111</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <span>중앙환자감시시스템(CMS)</span>
+                                                    <ul>
+                                                        <li><a href="#">MP600</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>홈렌탈 사업</span>
+                                    <ul>
+                                        <li><a href="#">사업소개</a></li>
+                                        <li><a href="#">서비스소개</a></li>
+                                    </ul>
+                                </li>
+                                <li class="last">
+                                    <span>홈헬스케어 사업</span>
+                                    <ul>
+										<li><a href="#">사업소개</a></li>
+										<li>
+                                        	<span>제품소개</span>
+                                            <ul>
+                                            	<li>
+                                                	<span>양압지속유지기</span>
+                                                    <ul>
+                                                    	<li>
+                                                        	<a href="#">M3</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+										<li><a href="#">서비스소개</a></li>
+									</ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>IR</span>
+                            <ul>
+                                <li><a href="#">재무정보</a></li>
+                                <li><a href="#">감사보고서</a></li>
+                                <li><a href="#">IR 자료</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>홍보센터</span>
+                            <ul>
+                                <li><a href="#">전시회</a></li>
+                                <li><a href="#">학회</a></li>
+                                <li><a href="#">Press release</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>인재영입</span>
+                            <ul>
+                                <li><a href="#">인재상</a></li>
+                                <li><a href="#">회사생활</a></li>
+                                <li><a href="#">채용절차</a></li>
+                                <li><a href="#">채용공고</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>고객센터</span>
+                            <ul>
+                                <li><a href="#">서비스 정보</a></li>
+                                <li><a href="#">서비스 요청</a></li>
+                                <li><a href="#">견적 문의</a></li>
+                                <li><a href="#">자주하는 질문</a></li>
+                                <li class="last"><a href="#">다운로드 센터</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a class="close" href="#none">사이트맵 닫기</a>
+                </div>
+            </div>
+            
+            <a class="family menu" href="#none">패밀리사이트</a>
+            <ul>
+            	<li><a href="#">사이트1</a></li>
+                <li><a href="#">사이트2</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="gnb_bg"> <!-- GNB 하위메뉴 표시 영역 -->
+    </div>
+</div>
+
+<div class="main_slide"> <!-- 슬라이드 영역 -->
+	<ul class="slide">
+    	<li><a href="#"><img src="../img/img/img_slide01_main.jpg" alt="대체텍스트" /></a></li> <!-- CMS상에서 대체텍스트를 입력할 부분 필요 -->
+        <li><a href="#"><img src="../img/img/img_slide02_main.jpg" alt="대체텍스트" /></a></li>
+        <li><a href="#"><img src="../img/img/img_slide03_main.jpg" alt="대체텍스트" /></a></li>
+        <li><a href="#"><img src="../img/img/img_slide04_main.jpg" alt="대체텍스트" /></a></li>
+    </ul>
+</div>
+
+<div id="content" class="main">
+    <div class="main_con01 con">
+    	<h2>사업영역</h2>
+        <p>MEK-ICS는 고객님의 소중한 호흡이 되겠습니다.</p>
+        <ul>
+        	<li>
+            	<a href="#">
+                	<strong>병원-중환자 영역 사업</strong>
+                    <span>중환자용 의료기기 제조 및 판매</span>
+                </a>
+			</li>
+            <li>
+            	<a href="#">
+                	<strong>홈렌탈 사업</strong>
+                    <span>만성호흡기질환 환자 등<br />호흡치료 환자용 인공호흡기 임대</span>
+                </a>
+			</li>
+            <li>
+            	<a href="#">
+                	<strong>홈헬스케어 사업</strong>
+                    <span>수면무호흡, 코골이 환자 치료용<br />양압기 솔루션 유통판매</span>
+                </a>
+			</li>
+        </ul>
+    </div>
+    <div class="con_wrap">
+        <div class="main_con02 con">
+            <h2>고객센터</h2>
+            <p>MEK-ICS는 고객님의 문의와 불편사항에 대해 항상 귀 기울이겠습니다.</p>
+            <ul>
+                <li>
+                    <a href="#">
+                        <strong>다운로드 센터</strong>
+                        <span>서비스 이용 중 원했던<br />다양한 자료들을 만나보세요.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <strong>견적문의</strong>
+                        <span>문의를 하시면 자세한 견적을<br />제공하겠습니다.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <strong>서비스요청</strong>
+                        <span>최고의 서비스를 제공해 드릴 수 있도록<br />노력하고 있습니다.</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main_con03 con">
+    	<h2>홍보센터</h2>
+        <p>MEK-ICS의 다양한 활동을 빠르게 만나실 수 있습니다.</p>
+        <dl>
+        	<dt><a href="#none"><span>전시회</span></a></dt>
+            <dd>
+            	<p>당사 주요 전시회 참가 동향을 소개합니다.</p>
+                <ul>
+                	<li>
+                    	<a href="#">겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장</a>
+                        <span>9999-99-99</span>
+                    </li>
+                    <li>
+                    	<a href="#">겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장</a>
+                        <span>9999-99-99</span>
+                    </li>
+                    <li>
+                    	<a href="#">겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장</a>
+                        <span>9999-99-99</span>
+                    </li>
+                </ul>
+                <a class="more" href="#">MORE</a>
+            </dd>
+            <dt><a href="#none"><span>학회</span></a></dt>
+            <dd>
+            	<p>최신 학회 참가소식을 소개합니다.</p>
+                <ul>
+                	<li>
+                    	<a href="#">겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장</a>
+                        <span>9999-99-99</span>
+                    </li>
+                    <li>
+                    	<a href="#">겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장</a>
+                        <span>9999-99-99</span>
+                    </li>
+                    <li>
+                    	<a href="#">겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장</a>
+                        <span>9999-99-99</span>
+                    </li>
+                </ul>
+                <a class="more" href="#">MORE</a>
+            </dd>
+            <dt><a href="#none"><span>Press Release</span></a></dt>
+            <dd>
+            	<p>다양한 홍보자료를 소개합니다.</p>
+                <ul>
+                	<li>
+                    	<a href="#">겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장</a>
+                        <span>9999-99-99</span>
+                    </li>
+                    <li>
+                    	<a href="#">겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장</a>
+                        <span>9999-99-99</span>
+                    </li>
+                    <li>
+                    	<a href="#">겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장겁나긴문장</a>
+                        <span>9999-99-99</span>
+                    </li>
+                </ul>
+                <a class="more" href="#">MORE</a>
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="footer">
+	<address>
+    	경기도 파주시 상지석길 21(상지석동 653-33) TEL 070-7119-2500 / FAX 070-5052-5800<br />
+        Copyright(c) MEK-ICS CO.,LTD. All Rights Reserved.
+    </address>
+</div>
+
+</body>
+</html>
